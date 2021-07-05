@@ -58,7 +58,7 @@ public class DTR {
 	private JLabel fullName;
 	public static JTextField name;
 	private JLabel departmentLbl;
-	private JTextField department;
+	public static JTextField department;
 	private JLabel headOfDepartment;
 	public static JTextField department_head;
 	private JDateChooser dateChooser;
@@ -164,14 +164,14 @@ public class DTR {
 		JLabel lblNewLabel = new JLabel("Faculty Daily Time Record");
 		lblNewLabel.setBackground(new Color(0, 0, 0));
 		lblNewLabel.setForeground(new Color(0, 51, 51));
-		lblNewLabel.setFont(new Font("Book Antiqua", Font.BOLD, 24));
-		lblNewLabel.setBounds(96, 26, 304, 50);
+		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 28));
+		lblNewLabel.setBounds(96, 7, 367, 83);
 		frame.getContentPane().add(lblNewLabel);
 		
 		lblClock = new JLabel("Time");
 		lblClock.setForeground(new Color(0, 51, 51));
 		lblClock.setFont(new Font("Lucida Fax", Font.BOLD, 18));
-		lblClock.setBounds(473, 45, 134, 14);
+		lblClock.setBounds(539, 45, 134, 27);
 		frame.getContentPane().add(lblClock);
 		
 		fullName = new JLabel("Full Name: ");
@@ -221,13 +221,13 @@ public class DTR {
 		// Type
 		types = new JComboBox(type);
 		types.setBackground(new Color(255, 245, 238));
-		types.setBounds(653, 208, 122, 28);
+		types.setBounds(729, 222, 122, 28);
 		frame.getContentPane().add(types);
 		
 		JLabel lblType = new JLabel("Type: ");
 		lblType.setForeground(new Color(0, 51, 51));
 		lblType.setFont(new Font("Book Antiqua", Font.BOLD, 14));
-		lblType.setBounds(653, 184, 56, 15);
+		lblType.setBounds(729, 196, 56, 15);
 		frame.getContentPane().add(lblType);
 
 		JTable table  = new JTable();
@@ -252,19 +252,19 @@ public class DTR {
 		lblTimelbl = new JLabel("Time");
 		lblTimelbl.setForeground(new Color(0, 51, 51));
 		lblTimelbl.setFont(new Font("Lucida Fax", Font.BOLD, 15));
-		lblTimelbl.setBounds(473, 20, 62, 14);
+		lblTimelbl.setBounds(538, 20, 62, 14);
 		frame.getContentPane().add(lblTimelbl);
 		
 		lblDate = new JLabel("Date");
 		lblDate.setForeground(new Color(0, 51, 51));
 		lblDate.setFont(new Font("Lucida Fax", Font.BOLD, 15));
-		lblDate.setBounds(662, 20, 40, 14);
+		lblDate.setBounds(704, 20, 40, 14);
 		frame.getContentPane().add(lblDate);
 		
 		lblDate_1 = new JLabel("Date");
 		lblDate_1.setForeground(new Color(0, 51, 51));
 		lblDate_1.setFont(new Font("Lucida Fax", Font.BOLD, 18));
-		lblDate_1.setBounds(662, 45, 182, 14);
+		lblDate_1.setBounds(704, 45, 170, 27);
 		frame.getContentPane().add(lblDate_1);
 		
 		employeeIcon = new JLabel("");
@@ -318,22 +318,22 @@ public class DTR {
 				model.addRow(row);
 			}
 		});
-		time_in_btn.setBounds(605, 329, 170, 57);
+		time_in_btn.setBounds(615, 391, 170, 57);
 		frame.getContentPane().add(time_in_btn);
 		
 		time_in = new JTextArea();
-		time_in.setBackground(SystemColor.inactiveCaption);
-		time_in.setBounds(639, 271, 80, 27);
+		time_in.setBackground(Color.LIGHT_GRAY);
+		time_in.setBounds(644, 329, 80, 27);
 		frame.getContentPane().add(time_in);
 		
 		time_out = new JTextArea();
-		time_out.setBackground(SystemColor.inactiveCaption);
-		time_out.setBounds(742, 271, 80, 27);
+		time_out.setBackground(Color.LIGHT_GRAY);
+		time_out.setBounds(764, 329, 80, 27);
 		frame.getContentPane().add(time_out);
 		
 		days = new JComboBox(day);
 		days.setBackground(new Color(255, 245, 238));
-		days.setBounds(521, 208, 113, 27);
+		days.setBounds(564, 223, 113, 27);
 		frame.getContentPane().add(days);
 		
 		id_number = new JTextField();
@@ -351,7 +351,7 @@ public class DTR {
 		JLabel lblDay = new JLabel("Day: ");
 		lblDay.setForeground(new Color(0, 51, 51));
 		lblDay.setFont(new Font("Book Antiqua", Font.BOLD, 14));
-		lblDay.setBounds(523, 185, 56, 15);
+		lblDay.setBounds(564, 196, 56, 15);
 		frame.getContentPane().add(lblDay);
 		
 		month = new JMonthChooser();
@@ -365,13 +365,13 @@ public class DTR {
 		JLabel lblTimeIn = new JLabel("Time In");
 		lblTimeIn.setForeground(new Color(0, 51, 51));
 		lblTimeIn.setFont(new Font("Book Antiqua", Font.BOLD, 14));
-		lblTimeIn.setBounds(639, 247, 56, 15);
+		lblTimeIn.setBounds(653, 303, 56, 15);
 		frame.getContentPane().add(lblTimeIn);
 		
 		JLabel lblTimeOut = new JLabel("Time Out");
 		lblTimeOut.setForeground(new Color(0, 51, 51));
 		lblTimeOut.setFont(new Font("Book Antiqua", Font.BOLD, 14));
-		lblTimeOut.setBounds(742, 247, 73, 15);
+		lblTimeOut.setBounds(771, 303, 73, 15);
 		frame.getContentPane().add(lblTimeOut);
 		
 		lblMonth = new JLabel("Month:");
@@ -387,8 +387,8 @@ public class DTR {
 		frame.getContentPane().add(lblYear);
 		
 		holiday = new JTextArea();
-		holiday.setBackground(SystemColor.inactiveCaption);
-		holiday.setBounds(678, 146, 40, 27);
+		holiday.setBackground(Color.LIGHT_GRAY);
+		holiday.setBounds(692, 146, 70, 27);
 		frame.getContentPane().add(holiday);
 		
 		JLabel lblHolidays = new JLabel("Holidays: ");
@@ -397,8 +397,8 @@ public class DTR {
 		lblHolidays.setBounds(682, 120, 73, 15);
 		frame.getContentPane().add(lblHolidays);
 		
-		JButton add_btn_1 = new JButton("Add");
-		add_btn_1.addActionListener(new ActionListener() {
+		JButton addHol = new JButton("Add Holiday");
+		addHol.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
 					saveClassTbl();
@@ -410,8 +410,8 @@ public class DTR {
 					JOptionPane.showMessageDialog(null, "Holiday Successfully Added");
 			}
 		});
-		add_btn_1.setBounds(726, 145, 56, 27);
-		frame.getContentPane().add(add_btn_1);
+		addHol.setBounds(772, 145, 102, 27);
+		frame.getContentPane().add(addHol);
 		
 		preview = new JButton("View");
 		preview.setFont(new Font("Sitka Text", Font.BOLD, 14));
@@ -437,18 +437,19 @@ public class DTR {
 			}
 			}
 		});
-		preview.setBounds(605, 397, 170, 50);
+		preview.setBounds(615, 459, 170, 50);
 		frame.getContentPane().add(preview);
 		
 		id_type = new JTextArea();
-		id_type.setBackground(SystemColor.inactiveCaption);
-		id_type.setBounds(538, 271, 62, 27);
+		id_type.setBackground(Color.LIGHT_GRAY);
+		id_type.setBounds(538, 329, 62, 27);
 		frame.getContentPane().add(id_type);
 		
 		JLabel dayNum = new JLabel("Day No.");
+		dayNum.setForeground(new Color(0, 0, 0));
 		dayNum.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblTimeIn.setForeground(new Color(0, 51, 51));
-		dayNum.setBounds(528, 247, 79, 16);
+		dayNum.setBounds(539, 302, 81, 16);
 		frame.getContentPane().add(dayNum);
 	}
 	

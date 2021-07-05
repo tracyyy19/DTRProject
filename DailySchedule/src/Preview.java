@@ -38,6 +38,8 @@ import java.io.FileOutputStream;
 import java.nio.charset.StandardCharsets;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import javax.swing.JPanel;
+import javax.swing.border.LineBorder;
 
 
 public class Preview {
@@ -68,7 +70,7 @@ public class Preview {
 		frame.setDefaultCloseOperation(0);
 		
 		JScrollPane scrollPaneClass = new JScrollPane();
-		scrollPaneClass.setBounds(10, 230, 213, 300);
+		scrollPaneClass.setBounds(10, 175, 219, 369);
 		frame.getContentPane().add(scrollPaneClass);
 		
 		classTable = new JTable();
@@ -76,7 +78,7 @@ public class Preview {
 		scrollPaneClass.setViewportView(classTable);
 		
 		JScrollPane scrollPaneConsultation = new JScrollPane();
-		scrollPaneConsultation.setBounds(233, 230, 213, 300);
+		scrollPaneConsultation.setBounds(228, 175, 227, 369);
 		frame.getContentPane().add(scrollPaneConsultation);
 		
 		consultationTable = new JTable();
@@ -85,7 +87,7 @@ public class Preview {
 		scrollPaneConsultation.setViewportView(consultationTable);
 		
 		JScrollPane scrollPaneRelated = new JScrollPane();
-		scrollPaneRelated.setBounds(456, 230, 213, 300);
+		scrollPaneRelated.setBounds(456, 175, 227, 369);
 		frame.getContentPane().add(scrollPaneRelated);
 		
 		relatedTable = new JTable();
@@ -94,7 +96,7 @@ public class Preview {
 		scrollPaneRelated.setViewportView(relatedTable);
 		
 		JScrollPane scrollPaneOthers = new JScrollPane();
-		scrollPaneOthers.setBounds(679, 230, 213, 300);
+		scrollPaneOthers.setBounds(679, 175, 213, 369);
 		frame.getContentPane().add(scrollPaneOthers);
 		
 		othersTable = new JTable();
@@ -353,7 +355,7 @@ public class Preview {
 		});
 		btnExit.setForeground(Color.WHITE);
 		btnExit.setBackground(new Color(255, 0, 0));
-		btnExit.setBounds(699, 570, 195, 57);
+		btnExit.setBounds(689, 570, 195, 57);
 		frame.getContentPane().add(btnExit);
 		
 //		JLabel nameViewLabel = new JLabel("Name: ");
@@ -408,23 +410,80 @@ public class Preview {
 //		
 		JLabel lblNewLabel_1_1_1_1_1_1 = new JLabel("Class");
 		lblNewLabel_1_1_1_1_1_1.setFont(new java.awt.Font("Tahoma", java.awt.Font.BOLD, 15));
-		lblNewLabel_1_1_1_1_1_1.setBounds(86, 186, 48, 21);
+		lblNewLabel_1_1_1_1_1_1.setBounds(85, 155, 48, 21);
 		frame.getContentPane().add(lblNewLabel_1_1_1_1_1_1);
 		
 		JLabel lblNewLabel_1_1_1_1_1_1_1 = new JLabel("Consultation");
 		lblNewLabel_1_1_1_1_1_1_1.setFont(new java.awt.Font("Tahoma", java.awt.Font.BOLD, 15));
-		lblNewLabel_1_1_1_1_1_1_1.setBounds(294, 186, 111, 21);
+		lblNewLabel_1_1_1_1_1_1_1.setBounds(290, 155, 111, 21);
 		frame.getContentPane().add(lblNewLabel_1_1_1_1_1_1_1);
 		
 		JLabel lblNewLabel_1_1_1_1_1_1_2 = new JLabel("Related Activities");
 		lblNewLabel_1_1_1_1_1_1_2.setFont(new java.awt.Font("Tahoma", java.awt.Font.BOLD, 15));
-		lblNewLabel_1_1_1_1_1_1_2.setBounds(496, 186, 160, 21);
+		lblNewLabel_1_1_1_1_1_1_2.setBounds(495, 155, 160, 21);
 		frame.getContentPane().add(lblNewLabel_1_1_1_1_1_1_2);
 		
 		JLabel lblNewLabel_1_1_1_1_1_1_3 = new JLabel("Others");
 		lblNewLabel_1_1_1_1_1_1_3.setFont(new java.awt.Font("Tahoma", java.awt.Font.BOLD, 15));
-		lblNewLabel_1_1_1_1_1_1_3.setBounds(752, 186, 73, 21);
+		lblNewLabel_1_1_1_1_1_1_3.setBounds(749, 155, 73, 21);
 		frame.getContentPane().add(lblNewLabel_1_1_1_1_1_1_3);
+		
+		JPanel panel = new JPanel();
+		panel.setBorder(new LineBorder(new Color(0, 0, 0)));
+		panel.setBounds(10, 155, 219, 21);
+		frame.getContentPane().add(panel);
+		panel.setLayout(null);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setLayout(null);
+		panel_1.setBorder(new LineBorder(new Color(0, 0, 0)));
+		panel_1.setBounds(227, 155, 230, 21);
+		frame.getContentPane().add(panel_1);
+		
+		JPanel panel_1_1 = new JPanel();
+		panel_1_1.setLayout(null);
+		panel_1_1.setBorder(new LineBorder(new Color(0, 0, 0)));
+		panel_1_1.setBounds(456, 155, 227, 21);
+		frame.getContentPane().add(panel_1_1);
+		
+		JPanel panel_1_1_1 = new JPanel();
+		panel_1_1_1.setLayout(null);
+		panel_1_1_1.setBorder(new LineBorder(new Color(0, 0, 0)));
+		panel_1_1_1.setBounds(679, 155, 213, 21);
+		frame.getContentPane().add(panel_1_1_1);
+		
+		JLabel newLabelName = new JLabel("Name: ");
+		newLabelName.setFont(new java.awt.Font("Times New Roman", java.awt.Font.BOLD, 18));
+		newLabelName.setBounds(47, 129, 55, 21);
+		frame.getContentPane().add(newLabelName);
+		
+		JLabel lblNamevalue = new JLabel("nameValue");
+		lblNamevalue.setFont(new java.awt.Font("Times New Roman", java.awt.Font.BOLD, 18));
+		lblNamevalue.setText(DTR.name.getText());
+		lblNamevalue.setBounds(112, 129, 159, 21);
+		frame.getContentPane().add(lblNamevalue);
+		
+		JLabel previewLblDepartment = new JLabel("Department:");
+		previewLblDepartment.setFont(new java.awt.Font("Times New Roman", java.awt.Font.BOLD, 18));
+		previewLblDepartment.setBounds(510, 129, 111, 21);
+		frame.getContentPane().add(previewLblDepartment);
+		
+		JLabel lblDeptvalue = new JLabel("deptValue");
+		lblDeptvalue.setFont(new java.awt.Font("Times New Roman", java.awt.Font.BOLD, 18));
+		lblDeptvalue.setText(DTR.department.getText());
+		lblDeptvalue.setBounds(615, 129, 269, 21);
+		frame.getContentPane().add(lblDeptvalue);
+		
+		JLabel previewLblHead = new JLabel("Head of Department:");
+		previewLblHead.setFont(new java.awt.Font("Times New Roman", java.awt.Font.BOLD, 18));
+		previewLblHead.setBounds(22, 570, 184, 21);
+		frame.getContentPane().add(previewLblHead);
+		
+		JLabel lblHeadvalue = new JLabel("headValue");
+		lblHeadvalue.setFont(new java.awt.Font("Times New Roman", java.awt.Font.BOLD, 18));
+		lblHeadvalue.setText(DTR.department_head.getText());
+		lblHeadvalue.setBounds(74, 593, 273, 34);
+		frame.getContentPane().add(lblHeadvalue);
 		frame.setVisible(true);
 	}
 	
@@ -826,6 +885,4 @@ public static void totalConsultationHrs() {
 				System.out.print("error: " + err);
 		}
 	}
-
-
 }
