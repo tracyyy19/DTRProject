@@ -103,15 +103,7 @@ public class Preview {
 		othersTable.setBackground(new Color(245, 245, 220));
 		othersTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 		scrollPaneOthers.setViewportView(othersTable);
-		
-//		JScrollPane scrollPaneTotalHrs = new JScrollPane();
-//		scrollPaneTotalHrs.setBounds(902, 230, 73, 300);
-//		frame.getContentPane().add(scrollPaneTotalHrs);
-		
-//		totalHrsTable = new JTable();
-//		totalHrsTable.setBackground(new Color(245, 245, 220));
-//		scrollPaneTotalHrs.setViewportView(totalHrsTable);
-		
+			
 		JButton btnNewButton = new JButton("Generate PDF");
 		btnNewButton.setForeground(Color.WHITE);
 		btnNewButton.setBackground(new Color(135, 206, 235));
@@ -253,7 +245,7 @@ public class Preview {
 					
 					String relatedQ = "select * from related";
 					Statement related_st  = con.createStatement();
-					ResultSet related_rs = class_st.executeQuery(relatedQ);
+					ResultSet related_rs = related_st.executeQuery(relatedQ);
 
 					PdfPTable related_tbl = new PdfPTable(4);
 					
@@ -284,7 +276,7 @@ public class Preview {
 					document.add(new Paragraph("\n"));
 					String othersQ = "select * from others";
 					Statement others_st  = con.createStatement();
-					ResultSet others_rs = class_st.executeQuery(othersQ);
+					ResultSet others_rs = others_st.executeQuery(othersQ);
 
 					PdfPTable others_tbl = new PdfPTable(4);
 					
