@@ -168,8 +168,8 @@ public class Preview {
 						
 						document.add(new Paragraph("\n"));
 
-						document.add(new Paragraph("                " + "Name: " + employee_rs.getString("name") +"                               "
-								+"                  "+ "Department: "  + employee_rs.getString("department")));
+						document.add(new Paragraph("        " + "Name: " + employee_rs.getString("name") +"                               "
+								+"          "+ "Department: "  + employee_rs.getString("department")));
 					}
 					document.add(new Paragraph("\n"));					
 					String query_class_sum = "select sum(hrs) from class";
@@ -216,9 +216,6 @@ public class Preview {
 					}
 					rs_consultation_sum.close();
 					st_consultation_sum.close();
-//					Paragraph _consultation = new Paragraph("Consultation");
-//					_consultation.setAlignment(Element.ALIGN_CENTER);
-//					document.add(_consultation);
 					document.add(new Paragraph("\n"));
 					
 					String consultationQ = "select * from consultation";
@@ -314,8 +311,8 @@ public class Preview {
 					
 					while(deptHead_rs.next()) {
 						document.add(new Paragraph("This certifies upon my honor that the foregoing is a record for services"
-								+ " I rendered to MSU-Iligan Institute of Technology during the month of"));
-					document.add(new Paragraph(deptHead_rs.getString("month") + deptHead_rs.getString("year")));
+								+ " I rendered to MSU-Iligan Institute of Technology during the month of "
+								+ deptHead_rs.getString("month") + " " + deptHead_rs.getString("year")));
 					document.add(new Paragraph("\n"));
 					document.add(new Paragraph("\n"));
 					document.add(new Paragraph("________"+DTR.name.getText()+"________"));
@@ -358,16 +355,6 @@ public class Preview {
 		btnExit.setBounds(689, 570, 195, 57);
 		frame.getContentPane().add(btnExit);
 		
-//		JLabel nameViewLabel = new JLabel("Name: ");
-//		nameViewLabel.setFont(new java.awt.Font("Tahoma", java.awt.Font.BOLD, 12));
-//		nameViewLabel.setBounds(10, 182, 41, 21);
-//		frame.getContentPane().add(nameViewLabel);
-//		
-//		JLabel deptViewLabel = new JLabel("Department: ");
-//		deptViewLabel.setFont(new java.awt.Font("Tahoma", java.awt.Font.BOLD, 12));
-//		deptViewLabel.setBounds(582, 182, 87, 21);
-//		frame.getContentPane().add(deptViewLabel);
-		
 		JLabel lblNewLabel_1 = new JLabel("Republic of the Philippines");
 		lblNewLabel_1.setFont(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 14));
 		lblNewLabel_1.setBounds(391, 11, 160, 21);
@@ -392,22 +379,7 @@ public class Preview {
 		lblNewLabel_1_1_1_1_1.setFont(new java.awt.Font("Tahoma", java.awt.Font.BOLD, 15));
 		lblNewLabel_1_1_1_1_1.setBounds(354, 99, 246, 21);
 		frame.getContentPane().add(lblNewLabel_1_1_1_1_1);
-		
-//		JLabel lblNewLabel_1_1_1_1_2 = new JLabel("For the month of");
-//		lblNewLabel_1_1_1_1_2.setFont(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 14));
-//		lblNewLabel_1_1_1_1_2.setBounds(425, 120, 111, 21);
-//		frame.getContentPane().add(lblNewLabel_1_1_1_1_2);
-		
-//		nameView = new JLabel("nameValue");
-//		nameView.setFont(new java.awt.Font("Tahoma", java.awt.Font.BOLD, 12));
-//		nameView.setBounds(61, 182, 201, 21);
-//		frame.getContentPane().add(nameView);
-		
-//		JLabel lblDeptvalue = new JLabel("deptValue");
-//		lblDeptvalue.setFont(new java.awt.Font("Tahoma", java.awt.Font.BOLD, 12));
-//		lblDeptvalue.setBounds(665, 182, 201, 21);
-//		frame.getContentPane().add(lblDeptvalue);
-//		
+			
 		JLabel lblNewLabel_1_1_1_1_1_1 = new JLabel("Class");
 		lblNewLabel_1_1_1_1_1_1.setFont(new java.awt.Font("Tahoma", java.awt.Font.BOLD, 15));
 		lblNewLabel_1_1_1_1_1_1.setBounds(85, 155, 48, 21);
@@ -640,36 +612,6 @@ public class Preview {
 		}
 	}
 	
-	public static void showTotalHrs() {
-		Connection con = connect();
-		DefaultTableModel model = new DefaultTableModel();
-		model.addColumn("Total Hrs");
-		
-		try {
-			String querry = "select * from class";
-			Statement st  = con.createStatement();
-			ResultSet rs = st.executeQuery(querry);
-			
-			while(rs.next()) {
-				model.addRow(new Object[] {
-						rs.getString("hrs"),
-				});
-			}
-				rs.close();
-				st.close();
-			
-				totalHrsTable.setModel(model);
-				totalHrsTable.setAutoResizeMode(0);
-				totalHrsTable.getColumnModel().getColumn(0).setPreferredWidth(52);
-				totalHrsTable.getColumnModel().getColumn(1).setPreferredWidth(52);
-				totalHrsTable.getColumnModel().getColumn(2).setPreferredWidth(52);
-				totalHrsTable.getColumnModel().getColumn(3).setPreferredWidth(52);
-
-		}catch(Exception err) {
-			System.out.print("error: " + err);
-		}
-	}
-	
 	public static void deleteAllData() {
 		Connection con = connect();
 		try {
@@ -869,14 +811,12 @@ public static void totalConsultationHrs() {
 	Connection con = connect();
 	DefaultTableModel model = new DefaultTableModel();
 		try {
-			String query = "select sum(hrs) from class union select sum(hrs) from related";
+			String query = "select sum(hrs) from consultation";
 	
 			Statement st  = con.createStatement();
 			ResultSet rs = st.executeQuery(query);
 			if(rs.next()) {
 				String a = rs.getString("sum(hrs)");
-//				String b = rs.getString("sum(hrs)");
-
 			}
 				rs.close();
 				st.close();

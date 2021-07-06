@@ -405,7 +405,6 @@ public class DTR {
 					saveConsultationTable();
 					saveRelativeActivityTable();
 					saveOthersTable();
-//					saveTotalHrs();
 					holiday.setText("");
 					JOptionPane.showMessageDialog(null, "Holiday Successfully Added");
 			}
